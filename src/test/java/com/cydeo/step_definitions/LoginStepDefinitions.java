@@ -8,6 +8,7 @@ public class LoginStepDefinitions {
     @When("user enters librarian username")
     public void userEntersLibrarianUsername() {
     }
+
     @And("user enters librarian password")
     public void userEntersLibrarianPassword() {
     }
@@ -24,4 +25,12 @@ public class LoginStepDefinitions {
     public void userEntersStudentPassword() {
     }
 
+    @When("user enters admin username")
+    public void userEntersAdminUsername() {
+
+    }
+
+    @And("user enters admin password")
+    public void userEntersAdminPassword() {
+    }
 }
