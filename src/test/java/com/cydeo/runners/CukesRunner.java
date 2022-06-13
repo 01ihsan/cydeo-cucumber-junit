@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
-        dryRun = true //turns of the step_definitions. It will get only snippets.
+        dryRun = true, //turns of the step_definitions. It will get only snippets.
+        tags = "@Student"
 )
 public class CukesRunner {
 }
