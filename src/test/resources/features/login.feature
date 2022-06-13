@@ -4,7 +4,7 @@ Feature: Library app login feature
   As a user, I should be able yo login with correct credentials to different accounts and dashboard should be displayed.
 
   @Librarian
-  Scenario: login as Librarian
+  Scenario: login as librarian
     When user enters librarian username
     And user enters librarian password
     Then user should see the dashboard
