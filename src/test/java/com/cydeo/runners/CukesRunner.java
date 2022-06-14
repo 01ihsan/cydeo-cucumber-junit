@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         plugin = "html:target/cucumber-report.html",
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
-        dryRun = true, //turns of the step_definitions. It will get only snippets.
-        tags = "@employee and not @admin or @student"
+        dryRun = false, //turns of the step_definitions. It will get only snippets.
+        tags = "@Regression"
 )
 public class CukesRunner {
 }
