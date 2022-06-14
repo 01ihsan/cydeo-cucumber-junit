@@ -9,25 +9,31 @@ import org.openqa.selenium.TakesScreenshot;
 public class Hooks {
     //import from cucumber NOT from junit
     @Before(order = 0)
-    public void setupScenario(){
+    public void setupScenario() {
         System.out.println("Setting up browser using cucumber @Before");
     }
-    @Before (value = "@admin" , order = 1)
-    public void setupScenarioForLogins(){
+
+    @Before(value = "@admin", order = 1)
+    public void setupScenarioForLogins() {
         System.out.println("This is an admin specific setup");
     }
+
     @After
-    public void teardownScenario(Scenario scenario){
-        byte [] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-        scenario.attach(screenshot,"image/png",scenario.getName());
+    public void teardownScenario(Scenario scenario) {
+        if (scenario.isFailed()) {
+            byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+        }
         Driver.closeDriver();
     }
+
     @BeforeStep
-    public void setupStep(){
+    public void setupStep() {
         System.out.println("A new step is starting...");
     }
+
     @AfterStep
-    public void afterStep(){
+    public void afterStep() {
         System.out.println("The step is done...");
     }
 }
