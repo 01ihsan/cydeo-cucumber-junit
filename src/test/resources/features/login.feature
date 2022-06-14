@@ -4,6 +4,9 @@ Feature: Library app login feature
   As a user,
   I should be able yo login with correct credentials to different accounts and dashboard should be displayed.
   Accounts: Librarian, Student and Admin
+
+  Background: for the scenarios in the feature file, user is expected to be on login page
+    Given user is on the library log in page
 #this is how we write comments
   @librarian @employee
   Scenario: login as librarian
