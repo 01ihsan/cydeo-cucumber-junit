@@ -10,6 +10,7 @@ import org.junit.Assert;
 
 public class WikiStepDefinitions {
     WikiSearchPage wikiSearchPage = new WikiSearchPage();
+
     @Given("User is on Wikipedia home page")
     public void userIsOnWikipediaHomePage() {
         Driver.getDriver().get("https://www.wikipedia.org");
@@ -27,11 +28,11 @@ public class WikiStepDefinitions {
 
     @Then("User sees {string} is in the wiki title")
     public void userSeesIsInTheWikiTitle(String keyword) {
-        Assert.assertEquals(keyword+" - Wikipedia",Driver.getDriver().getTitle());
+        Assert.assertEquals(keyword + " - Wikipedia", Driver.getDriver().getTitle());
     }
 
     @Then("User sees {string} is in the main header")
     public void userSeesIsInTheMainHeader(String keyword) {
-        Assert.assertEquals(keyword,wikiSearchPage.mainHeader.getText());
+        Assert.assertEquals(keyword, wikiSearchPage.mainHeader.getText());
     }
 }
