@@ -24,10 +24,10 @@ public class Hooks {
     }
     @BeforeStep
     public void setupStep(){
-        System.out.println("Step will start after this");
+        System.out.println("A new step is starting...");
     }
     @AfterStep
     public void afterStep(){
-        System.out.println("Step is done");
+        System.out.println("The step is done...");
     }
 }
