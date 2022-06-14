@@ -26,7 +26,12 @@ public class WikiStepDefinitions {
     }
 
     @Then("User sees {string} is in the wiki title")
-    public void userSeesIsInTheWikiTitle(String arg0) {
-        Assert.assertEquals(arg0+" - Wikipedia",Driver.getDriver().getTitle());
+    public void userSeesIsInTheWikiTitle(String keyword) {
+        Assert.assertEquals(keyword+" - Wikipedia",Driver.getDriver().getTitle());
+    }
+
+    @Then("User sees {string} is in the main header")
+    public void userSeesIsInTheMainHeader(String keyword) {
+        Assert.assertEquals(keyword,wikiSearchPage.mainHeader.getText());
     }
 }
