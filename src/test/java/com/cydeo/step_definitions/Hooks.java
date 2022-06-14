@@ -8,7 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 //in this class we create pre- and post-conditions to each scenario and each step
 public class Hooks {
     //import from cucumber NOT from junit
-    @Before(order = 0)
+    @Before(value = "@employee", order = 1)
     public void setupScenario() {
         System.out.println("Setting up browser using cucumber @Before");
     }
@@ -27,12 +27,12 @@ public class Hooks {
         Driver.closeDriver();
     }
 
-    @BeforeStep
+    @BeforeStep(value = "@admin")
     public void setupStep() {
         System.out.println("A new step is starting...");
     }
 
-    @AfterStep
+    @AfterStep(value = "@admin")
     public void afterStep() {
         System.out.println("The step is done...");
     }
