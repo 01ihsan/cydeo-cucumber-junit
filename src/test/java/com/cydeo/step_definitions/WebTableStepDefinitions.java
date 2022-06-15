@@ -1,6 +1,6 @@
 package com.cydeo.step_definitions;
 
-import com.cydeo.pages.WebTablePage;
+import com.cydeo.pages.WebTableLoginPage;
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
@@ -8,13 +8,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 
-import java.util.List;
 import java.util.Map;
 
 public class WebTableStepDefinitions {
-    WebTablePage webTablePage = new WebTablePage();
+    WebTableLoginPage webTablePage = new WebTableLoginPage();
 
     @Given("user is on the login page of web table app")
     public void userIsOnTheLoginPageOfWebTableApp() {
