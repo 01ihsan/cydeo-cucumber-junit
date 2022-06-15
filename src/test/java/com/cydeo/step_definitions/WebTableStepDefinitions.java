@@ -11,15 +11,17 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 import java.util.List;
+import java.util.Map;
 
 public class WebTableStepDefinitions {
-    WebTablePage webTablePage=new WebTablePage();
+    WebTablePage webTablePage = new WebTablePage();
 
     @Given("user is on the login page of web table app")
     public void userIsOnTheLoginPageOfWebTableApp() {
         String url = ConfigurationReader.getProperty("webTableUrl");
         Driver.getDriver().get(url);
     }
+
     @When("user enters username {string}")
     public void userEntersUsername(String arg0) {
         webTablePage.userName.sendKeys(arg0);
@@ -42,11 +44,11 @@ public class WebTableStepDefinitions {
 
     @When("user enters username {string} password {string} and logins")
     public void userEntersUsernamePasswordAndLogins(String arg0, String arg1) {
-        webTablePage.login(arg0,arg1);
+        webTablePage.login(arg0, arg1);
     }
 
     @When("user enters below credentials")
-    public void userEntersBelowCredentials() {
-
+    public void userEntersBelowCredentials(Map<String,String> credentials) {
+        webTablePage.login(credentials.get("username"),credentials.get("password"));
     }
 }
