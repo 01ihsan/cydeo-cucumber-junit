@@ -28,4 +28,6 @@ public class WebTableOrderPage extends WebTableBasePage {
     public WebElement inputCardNo;
     @FindBy(xpath = "//input[@name='cardExp']")
     public WebElement inputCardExp;
+    @FindBy(xpath = "//button[.='Process Order']")
+    public WebElement processOrderButton;
 }
