@@ -1,20 +1,28 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.WebTableLoginPage;
+import com.cydeo.pages.WebTableOrderPage;
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.support.ui.Select;
 
 public class WebTableOrderStepDefinitions {
-    WebTableLoginPage webTablePage= new WebTableLoginPage();
+    WebTableLoginPage webTableLoginPage= new WebTableLoginPage();
+    WebTableOrderPage webTableOrderPage= new WebTableOrderPage();
     @Given("user is already logged in and on order page")
     public void userIsAlreadyLoggedInAndOnOrderPage() {
-        webTablePage.login("Test","Tester");
+        Driver.getDriver().get("https://web-table-2.cydeo.com/login");
+        webTableLoginPage.login("Test","Tester");
+        webTableOrderPage.orderLink.click();
     }
 
     @When("user selects product type {string}")
     public void userSelectsProductType(String arg0) {
+        Select select = new Select(webTableOrderPage.productDropdown);
+        select.selectByVisibleText(arg0);
     }
 
     @And("user enters quantity {int}")
