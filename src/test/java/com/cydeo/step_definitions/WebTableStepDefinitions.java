@@ -10,6 +10,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.util.List;
+
 public class WebTableStepDefinitions {
     WebTablePage webTablePage=new WebTablePage();
 
@@ -38,4 +40,13 @@ public class WebTableStepDefinitions {
         BrowserUtils.verifyURLContains("order");
     }
 
+    @When("user enters username {string} password {string} and logins")
+    public void userEntersUsernamePasswordAndLogins(String arg0, String arg1) {
+        webTablePage.login(arg0,arg1);
+    }
+
+    @When("user enters below credentials")
+    public void userEntersBelowCredentials() {
+
+    }
 }

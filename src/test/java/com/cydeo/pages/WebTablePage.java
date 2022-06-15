@@ -15,4 +15,10 @@ public class WebTablePage {
     public WebElement password;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginButton;
+
+    public void login(String usernameinput, String passwordinput){
+        userName.sendKeys(usernameinput);
+        password.sendKeys(passwordinput);
+        loginButton.click();
+    }
 }
