@@ -16,9 +16,9 @@ public class WebTablePage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginButton;
 
-    public void login(String usernameinput, String passwordinput){
-        userName.sendKeys(usernameinput);
-        password.sendKeys(passwordinput);
+    public void login(String userNameInput, String passwordInput){
+        userName.sendKeys(userNameInput);
+        password.sendKeys(passwordInput);
         loginButton.click();
     }
 }
