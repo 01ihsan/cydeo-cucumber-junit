@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class WebTableOrderPage extends WebTableBasePage {
     public WebTableOrderPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -24,10 +26,14 @@ public class WebTableOrderPage extends WebTableBasePage {
     public WebElement inputState;
     @FindBy(xpath = "//input[@name='zip']")
     public WebElement inputZip;
+    @FindBy(xpath = "//input[@name='card']")
+    public List<WebElement> inputCardType;
     @FindBy(xpath = "//input[@name='cardNo']")
     public WebElement inputCardNo;
     @FindBy(xpath = "//input[@name='cardExp']")
     public WebElement inputCardExp;
     @FindBy(xpath = "//button[.='Process Order']")
     public WebElement processOrderButton;
+    @FindBy(xpath = "//tbody//tr[1]//td[1]")
+    public WebElement nameCheck;
 }
