@@ -39,7 +39,7 @@ Feature: Web table user order feature
       | MoneyCog    | 5        | Chien-Shiung Wu    | London st | London | England | 50505   | Visa     | 1111222233334444 | 12/24   | Chien-Shiung Wu    |
       | MoneyCog    | 6        | Barbara McClintock | London st | London | England | 50505   | Visa     | 1111222233334444 | 12/24   | Barbara McClintock |
 
-    @maleScientist
+    @maleScientists
     Examples: Famous male scientists
       | productType | quantity | customerName          | street    | city   | state   | zipcode | cardType | cardNumber       | expDate | expectedName          |
       | MoneyCog    | 2        | Charles Darwin        | London st | London | England | 50505   | Visa     | 1111222233334444 | 12/24   | Charles Darwin        |
