@@ -11,21 +11,30 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class BrowserUtils {
-    public static void waitForInvisibilityOf(WebElement webElement){
+    public static void waitForInvisibilityOf(WebElement webElement) {
         Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.invisibilityOf(webElement));
     }
-    public static void verifyURLContains(String expected){
+
+    public static void verifyURLContains(String expected) {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expected));
     }
-    public static List<String> dropdownOptionsAsString(WebElement dropdownElement){
-        Select select=new Select(dropdownElement);
+
+    public static List<String> dropdownOptionsAsString(WebElement dropdownElement) {
+        Select select = new Select(dropdownElement);
         List<WebElement> actualOptionsAsWebElement = select.getOptions();
         List<String> actualOptionsAsString = new ArrayList<>();
-        for (WebElement each: actualOptionsAsWebElement) {
+        for (WebElement each : actualOptionsAsWebElement) {
             actualOptionsAsString.add(each.getText());
         }
         return actualOptionsAsString;
+    }
+
+    public static void clickRadioButtonWithName(List<WebElement> radioButtonsList, String radioValue) {
+        for (WebElement each : radioButtonsList) {
+            if (each.getAttribute("value").equalsIgnoreCase(radioValue))
+                each.click();
+        }
     }
 }

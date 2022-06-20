@@ -2,20 +2,24 @@ package com.cydeo.step_definitions;
 
 import com.cydeo.pages.WebTableLoginPage;
 import com.cydeo.pages.WebTableOrderPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class WebTableOrderStepDefinitions {
-    WebTableLoginPage webTableLoginPage= new WebTableLoginPage();
-    WebTableOrderPage webTableOrderPage= new WebTableOrderPage();
+    WebTableLoginPage webTableLoginPage = new WebTableLoginPage();
+    WebTableOrderPage webTableOrderPage = new WebTableOrderPage();
+
     @Given("user is already logged in and on order page")
     public void userIsAlreadyLoggedInAndOnOrderPage() {
         Driver.getDriver().get("https://web-table-2.cydeo.com/login");
-        webTableLoginPage.login("Test","Tester");
+        webTableLoginPage.login("Test", "Tester");
         webTableOrderPage.orderLink.click();
     }
 
@@ -27,7 +31,7 @@ public class WebTableOrderStepDefinitions {
 
     @And("user enters quantity {int}")
     public void userEntersQuantity(int arg0) {
-        webTableOrderPage.productQuantity.sendKeys((arg0+""));
+        webTableOrderPage.productQuantity.sendKeys((arg0 + ""));
     }
 
     @And("user enters customer name {string}")
@@ -57,6 +61,7 @@ public class WebTableOrderStepDefinitions {
 
     @And("user selects credit card type {string}")
     public void userSelectsCreditCardType(String arg0) {
+        BrowserUtils.clickRadioButtonWithName(webTableOrderPage.inputCardType,arg0);
     }
 
     @And("user enters credit card number {string}")
@@ -76,5 +81,6 @@ public class WebTableOrderStepDefinitions {
 
     @Then("user should see {string} in first row of the web table")
     public void userShouldSeeInFirstRowOfTheWebTable(String arg0) {
+        Assert.assertTrue(webTableOrderPage.nameCheck.getText().equalsIgnoreCase(arg0));
     }
 }
