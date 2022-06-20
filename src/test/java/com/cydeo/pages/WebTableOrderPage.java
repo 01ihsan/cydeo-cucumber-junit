@@ -34,6 +34,6 @@ public class WebTableOrderPage extends WebTableBasePage {
     public WebElement inputCardExp;
     @FindBy(xpath = "//button[.='Process Order']")
     public WebElement processOrderButton;
-    @FindBy(xpath = "//tbody//tr[1]//td[1]")
+    @FindBy(xpath = "//table[@class='table is-fullwidth']/tbody/tr[1]/td[1]")
     public WebElement nameCheck;
 }
