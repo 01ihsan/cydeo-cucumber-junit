@@ -16,7 +16,7 @@ public class GoogleStepDefinitions {
     public void user_is_on_google_search_page() {
         System.out.println("Opening google page");
         Driver.getDriver().get("https://www.google.com");
-        googleSearchPage.cookiesAcceptButton.click();
+        //googleSearchPage.cookiesAcceptButton.click();
     }
     @Then("user should see title is Google")
     public void user_should_see_title_is_google() {
