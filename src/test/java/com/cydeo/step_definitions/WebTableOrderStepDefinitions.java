@@ -82,5 +82,6 @@ public class WebTableOrderStepDefinitions {
     @Then("user should see {string} in first row of the web table")
     public void userShouldSeeInFirstRowOfTheWebTable(String arg0) {
         Assert.assertTrue(webTableOrderPage.nameCheck.getText().equalsIgnoreCase(arg0));
+        System.out.println(webTableOrderPage.nameCheck.getText());
     }
 }
