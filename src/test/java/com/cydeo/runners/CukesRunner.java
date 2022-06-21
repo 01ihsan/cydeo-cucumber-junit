@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false, //turns of the step_definitions. It will get only snippets.
-        tags = "@femaleScientists"
+        tags = "@LoginWebTable"
 )
 public class CukesRunner {
 }
