@@ -38,6 +38,7 @@ public class WebTableStepDefinitions {
     @Then("user should see url contains orders")
     public void userShouldSeeUrlContainsOrders() {
         BrowserUtils.verifyURLContains("order");
+        System.out.println(Driver.getDriver().getCurrentUrl().toString());
     }
 
     @When("user enters username {string} password {string} and logins")
