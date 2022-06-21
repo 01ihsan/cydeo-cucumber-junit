@@ -4,7 +4,7 @@ Feature: Google search functionally
   Scenario: Search page title verification
     When user is on Google search page
     Then user should see title is Google
-
+@googleSearchApple
   Scenario: search functionality result title verification
     Given user is on Google search page
     When user types apple and clicks enter
